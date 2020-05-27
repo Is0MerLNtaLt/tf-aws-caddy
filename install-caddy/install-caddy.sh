@@ -1,9 +1,8 @@
 #!/bin/bash
 set -e
 
-
 readonly SCRIPT_NAME="$(basename "$0")"
-
+readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 function print_usage {
   echo
