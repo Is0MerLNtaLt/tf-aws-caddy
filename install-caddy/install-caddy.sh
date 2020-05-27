@@ -1,6 +1,10 @@
 #!/bin/bash
 set -e
 
+
+readonly SCRIPT_NAME="$(basename "$0")"
+
+
 function print_usage {
   echo
   echo "Usage: install-caddy.sh [OPTIONS]"
