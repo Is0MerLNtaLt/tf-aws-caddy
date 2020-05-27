@@ -68,6 +68,13 @@ function create_user {
     caddy
 }
 
+function place_runner {
+    sudo mkdir -p /opt/caddy/bin
+    sudo mv "$SCRIPT_DIR/../run-caddy/run-caddy.sh" /opt/caddy/bin
+    sudo chown -R "caddy:caddy" /opt/caddy/bin
+    sudo chmod a+x /opt/caddy/bin/run-caddy.sh
+}
+
 function install {
   local version=""
 
@@ -98,6 +105,7 @@ function install {
   log_info "Starting Caddy installation"
   create_user
   install_binaries "$version"
+  place_runner
   log_info "Caddy installation complete!"
 }
 
